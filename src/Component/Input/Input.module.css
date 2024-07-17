@@ -1,0 +1,47 @@
+.input{
+    background-color: #b8b8ff; 
+    color: #ffeedd;
+}
+.header{
+ 
+   display: flex;
+   gap: 1rem;
+   padding: 2rem;
+   justify-content: space-between;
+   max-width: 70rem;
+   margin: 0 auto;
+}
+.text{
+    font-size: 1.5rem;
+    
+    
+}
+.output{
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 1rem;
+}
+.div{
+    height: 2.5rem;
+    border-radius: 5px;
+}
+.btn{
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #788bff;
+    color: #ffeedd;
+    
+
+    
+}
+.btn:hover{
+    background-color: #6c7ef6; 
+}
+.item{
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none;
+    padding: 1rem;
+}

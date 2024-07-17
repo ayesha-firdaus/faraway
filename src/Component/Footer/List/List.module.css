@@ -1,0 +1,24 @@
+.items{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.check{
+height: 1.5rem;
+}
+.quantity{
+   
+    color: cornsilk;
+}
+.item{
+  color: #343434;
+  letter-spacing: 1.2px;
+}
+.cancel{
+    color: red;
+}
+.cut{
+    text-decoration: line-through;
+     cursor: pointer;
+}

@@ -1,0 +1,14 @@
+.footer{
+    background-color: #8090f7;
+color: #f2e9e4;
+text-align: center;
+padding: 1rem;
+}
+.text{
+    
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    font-weight:700;
+
+}
