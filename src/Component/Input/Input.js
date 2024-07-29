@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./Input.module.css"
-import { useState } from 'react'
+
 export default function Input({setUnpacked,form,setForm,Unpacked}) {
 
 
@@ -8,7 +8,7 @@ export default function Input({setUnpacked,form,setForm,Unpacked}) {
   e.preventDefault();
   const exists = Unpacked.find(el => el.item === form.item);
   console.log("length",form.item.length)
-  if (!exists&&!form?.item?.length==0) {
+  if (!exists&&!form?.item?.length===0) {
     
   setUnpacked(prev=>[...prev,form])
  
