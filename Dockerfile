@@ -4,7 +4,7 @@ FROM node:20 AS build
 # Set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
+# Copy only package.json and package-lock.json first
 COPY package*.json ./
 
 # Install dependencies
@@ -27,3 +27,4 @@ EXPOSE 80
 
 # Command to run the web server
 CMD ["nginx", "-g", "daemon off;"]
+
