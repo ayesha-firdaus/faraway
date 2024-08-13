@@ -1,27 +1,25 @@
-# Use an official Node runtime as the base image
-FROM node:20 AS build
+# Start your image with a node base image
+FROM node:20-alpine
 
-# Set the working directory
+# The /app directory should act as the main application directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json (if available) first
+# Copy the app package and package-lock.json file
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Copy local directories to the current local directory of our docker image (/app)
+COPY ./src ./src
+COPY ./public ./public
 
-# Copy the rest of the application code and build
-COPY . .
-RUN npm run build
+# Install node packages, install serve, build the app, and remove dependencies at the end
+RUN npm install \
+    && npm install -g serve \
+    && npm run build \
+    && rm -fr node_modules
 
-# Use a lightweight server to serve the built app
-FROM nginx:alpine
 
-# Copy the built app from the build stage
-COPY --from=build /app/build /usr/share/nginx/html
 
-# Expose port 80
-EXPOSE 80
+EXPOSE 3000
 
-# Start Nginx to serve the built app
-CMD ["nginx", "-g", "daemon off;"]
+# Start the app using serve command
+CMD [ "serve", "-s", "build" ]
